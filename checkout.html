@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="./checkout.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer></script>
+
+    <script src="./checkout.js" defer></script>
+
+    <script src="./progresso.js " defer></script>
+  </head>
+  <body>
+    <div class="propaganda">
+      <span>Frete Grátis a partir de R$1000</span>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <span class="logo"> </span>
+        <ul>
+          <li>Feminino</li>
+          <li>Masculino</li>
+          <li>Infantil</li>
+          <li>Underwear</li>
+          <li>Perfumes</li>
+          <li>Acessórios</li>
+        </ul>
+        <div>
+          <span>Meu Perfil </span>
+          <button class="light-dark" id="button">Light/Dark Mode</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ITENS -->
+
+    <div class="container-top">
+      <div class="container-left">
+        <h1 class="title-wrapper">Meus Itens</h1>
+        <div class="container-itens">
+          
+          <table id="checkout-table" class="tabela">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Nome do Produto</th>
+                <th>Tamanho</th>
+                <th>Preço (R$)</th>
+                <th>Remover</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2" class="title-wrapper">Total</td>
+                <td id="total-amount-footer" class="title-wrapper">R$ 0.00</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="container-right">
+        <h1 id="total-amount-span" class="title-wrapper">Total R$ 0.00</h1>
+        <div class="container-final">
+          
+          <button class="finalize-purchase" id="button">
+            <a href="#progresso">Finalizar Compra</a>
+          </button>
+          <button class="voltar" id="button">
+            <a href="./index.html">Voltar</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRESSO -->
+
+    <section class="progresso" id="progresso">
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+      <div class="container-footer">
+        <button id="button">Assine nossa revista</button>
+        <div>
+          <h1>Ajuda</h1>
+          <span>Fale Conosco</span>
+          <br />
+          <span>Encontre uma loja próxima</span>
+        </div>
+        <div>
+          <h1>Pedidos e Pagamentos</h1>
+          <span>Status do pedido</span>
+          <br />
+          <span>Política de retorno</span>
+          <br />
+          <span>Informações de envio</span>
+        </div>
+      </div>
+      <span>© Copyright - Victor's Secret. Todos os direitos reservados.</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victor's Secret</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="output.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer></script>
+
+    <script src="carousel.js" defer></script>
+
+    <script src="script.js" defer></script>
+
+    <script src="carrinho.js" defer></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+
+    <header
+      class="container-header w-screen flex flex-col items-center justify-start text-center">
+      <video
+        id="background-video"
+        autoplay
+        muted
+        loop
+        class="-screen w-screen bg-cover bg-no-repeat bg-center absolute top-0 z-[-1] object-cover">
+        <source src="./assets/images/BgVideo.mp4" type="video/mp4" />
+      </video>
+      <div class="more flex fixed items-center justify-evenly z-10 rounded">
+        <ul class="flex justify-between items-center">
+          <li>Minha Conta</li>
+          <li>Suporte</li>
+          <li class="cart-btn">
+            <ion-icon name="cart-outline" class="icon"></ion-icon>
+            <span class="badge"></span>
+          </li>
+          <li>
+            <button class="light-dark" id="button">Light/Dark Mode</button>
+          </li>
+        </ul>
+      </div>
+      <h1>Victor's Secret</h1>
+      <nav class="flex items-center justify-evenly border-2 border-white rounded">
+        <ul class="flex items-center justify-evenly uppercase">
+          <li>
+            Feminino
+            <ul>
+              <li>Blazers</li>
+              <li>Jaquetas</li>
+              <li>Jeans</li>
+              <li>Tricots</li>
+              <li>Calças</li>
+              <li>Blusas</li>
+              <li>Saias</li>
+              <li>Vestidos & Macacões</li>
+              <li>Pijamas</li>
+              <li>Plus Size</li>
+            </ul>
+          </li>
+          <li>
+            Masculino
+            <ul>
+              <li>Blazers</li>
+              <li>Jaquetas</li>
+              <li>Jeans</li>
+              <li>Tricots</li>
+              <li>Calças</li>
+              <li>Social</li>
+              <li>Casual</li>
+              <li>Reunião</li>
+              <li>Pijamas</li>
+              <li>Plus Size</li>
+            </ul>
+          </li>
+          <li>
+            Infantil
+            <ul>
+              <li>Camisetas</li>
+              <li>Calças</li>
+              <li>Underwear</li>
+              <li>Acessórios</li>
+              <li>Bermudas & Shorts</li>
+            </ul>
+          </li>
+          <li>
+            Underwear
+            <ul>
+              <li>Calcinhas</li>
+              <li>Lingerie</li>
+              <li>Sutiãs</li>
+              <li>Bodies</li>
+              <li>Plus Size</li>
+              <li>Cuecas</li>
+              <li>Meias</li>
+            </ul>
+          </li>
+          <li>
+            Perfumes
+            <ul>
+              <li>Masculinos</li>
+              <li>Femininos</li>
+              <li>Colônias</li>
+              <li>Unissex</li>
+            </ul>
+          </li>
+          <li>Acessórios</li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Carrinho -->
+
+    <aside id="cart-aside" class="cart-aside">
+      <div class="title-wrapper">
+      <h2>Carrinho</h2>
+    </div>
+      <ul
+        id="cart-items"
+        class="list-none p-2 m-2 border border-secondary-color rounded;"></ul>
+      <div id="cart-total" class="cart-total bg-details-color text-transparent">
+        Total: <span id="total-amount">$0.00</span>
+      </div>
+      <div class="cart-buttons mt-20 flex flex-col items-center">
+        <button class="my-2 w-full uppercase" id="button">
+          <a href="./checkout.html">Finalizar Compra</a>
+        </button>
+        <button class="clear-cart-btn btn" id="button">Limpar Carrinho</button>
+      </div>
+    </aside>
+
+    <!-- lancamentos -->
+    <section
+      class="lancamentos flex flex-col items-center justify-center w-screen">
+      <div class="title-wrapper">
+        <h2>Lançamentos</h2>
+      </div>
+      <div
+        class="container-lancamentos flex items-center justify-center flex-wrap">
+        <div class="lancamentositems w-1/3 h-full">
+          <img src="assets/images/destaque1.png" alt="" class="" />
+        </div>
+        <div class="lancamentositems w-1/3 h-full">
+          <img src="assets/images/destaque2.png" alt="" class="" />
+        </div>
+        <div class="lancamentositems w-1/3 h-full">
+          <img src="assets/images/destaque3.png" alt="" class="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- novos-m  -->
+    <section>
+      <div
+        class="container-novos max-h-screen flex flex-col items-center justify-evenly rounded">
+        <div class="title-wrapper">
+          <h2>Novos Masculinos</h2>
+        </div>
+        <div class="novos-btns flex justify-around items-center">
+          <button class="btn-casual" id="button">Casual</button>
+          <button class="btn-reuniao" id="button">Reunião</button>
+          <button class="btn-social" id="button">Social</button>
+        </div>
+        <div class="cards-container flex items-center justify-around p-2">
+          <div class="card casual" data-id="1">
+            <img src="./assets/images/modelo1-casual-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-1"
+                id="Pequeno-1"
+                checked />
+              <input class="Medio" type="radio" name="s-size-1" id="Medio-1" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-1"
+                id="Grande-1" />
+              <label for="Pequeno-1">P</label>
+              <label for="Medio-1">M</label>
+              <label for="Grande-1">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" data-size="small" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Polo Algodão Manga Curta</span>
+                <span class="price">R$ 180</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card casual" data-id="2">
+            <img src="./assets/images/modelo2-casual-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-2"
+                id="Pequeno-2"
+                checked />
+              <input class="Medio" type="radio" name="s-size-2" id="Medio-2" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-2"
+                id="Grande-2" />
+              <label for="Pequeno-2">P</label>
+              <label for="Medio-2">M</label>
+              <label for="Grande-2">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div
+                class="infobtn flex items-center justify-center w-fullnfobtn">
+                <button class="add-cart" data-size="Pequeno" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Polo Lycra com Bolso Vivo</span>
+                <span class="price">R$ 250</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card casual" data-id="3">
+            <img src="./assets/images/modelo3-casual-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-3"
+                id="Pequeno-3"
+                checked />
+              <input class="Medio" type="radio" name="s-size-3" id="Medio-3" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-3"
+                id="Grande-3" />
+              <label for="Pequeno-3">P</label>
+              <label for="Medio-3">M</label>
+              <label for="Grande-3">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div
+                class="infobtn flex items-center justify-center w-fullnfobtn">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Camisa Polo Stretch</span>
+                <span class="price">R$ 195</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reuniao" data-id="4">
+            <img src="./assets/images/modelo1-reuniao-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-4"
+                id="Pequeno-4"
+                checked />
+              <input class="Medio" type="radio" name="s-size-4" id="Medio-4" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-4"
+                id="Grande-4" />
+              <label for="Pequeno-4">P</label>
+              <label for="Medio-4">M</label>
+              <label for="Grande-4">G</label>
+            </div>
+
+            <div class="info flex flex-col items-center justify-evenly">
+              <div
+                class="infobtn flex items-center justify-center w-fullnfobtn">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Paletó Dois Botões Algodão Egípcio</span>
+                <span class="price">R$ 1499</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reuniao" data-id="5">
+            <img src="./assets/images/modelo2-reuniao-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-5"
+                id="Pequeno-5"
+                checked />
+              <input class="Medio" type="radio" name="s-size-5" id="Medio-5" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-5"
+                id="Grande-5" />
+              <label for="Pequeno-5">P</label>
+              <label for="Medio-5">M</label>
+              <label for="Grande-5">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-fullnfobtn">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+                </div>
+                <div class="infotxt">
+                  <span class="name"
+                    >Paletó Dois Botões Algodão com Elastano</span
+                  >
+                  <span class="price"> 1399</span>
+                </div>
+              </div>
+            </div>
+          
+          <div class="card reuniao" data-id="6">
+            <img src="./assets/images/modelo3-reuniao-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-6"
+                id="Pequeno-6"
+                checked />
+              <input class="Medio" type="radio" name="s-size-6" id="Medio-6" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-6"
+                id="Grande-6" />
+              <label for="Pequeno-6">P</label>
+              <label for="Medio-6">M</label>
+              <label for="Grande-6">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div
+                class="infobtn flex items-center justify-center w-fullnfobtn">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Paletó Dois Botões Malha</span>
+                <span class="price">R$ 999</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card social" data-id="7">
+            <img src="./assets/images/modelo1-social-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-7"
+                id="Pequeno-7"
+                checked />
+              <input class="Medio" type="radio" name="s-size-7" id="Medio-7" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-7"
+                id="Grande-7" />
+              <label for="Pequeno-7">P</label>
+              <label for="Medio-7">M</label>
+              <label for="Grande-7">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div
+                class="infobtn flex items-center justify-center w-fullnfobtn">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Camisa Social Fio 100 Listrada</span>
+                <span class="price">R$ 499</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card social" data-id="8">
+            <img src="./assets/images/modelo2-social-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-8"
+                id="Pequeno-8"
+                checked />
+              <input class="Medio" type="radio" name="s-size-8" id="Medio-8" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-8"
+                id="Grande-8" />
+              <label for="Pequeno-8">P</label>
+              <label for="Medio-8">M</label>
+              <label for="Grande-8">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div
+                class="infobtn flex items-center justify-center w-fullnfobtn">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Camisa Social com Fibra de Bambu</span>
+                <span class="price">R$ 389</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card social" data-id="9">
+            <img src="./assets/images/modelo3-social-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-9"
+                id="Pequeno-9"
+                checked />
+              <input class="Medio" type="radio" name="s-size-9" id="Medio-9" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-9"
+                id="Grande-9" />
+              <label for="Pequeno-9">P</label>
+              <label for="Medio-9">M</label>
+              <label for="Grande-9">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div
+                class="infobtn flex items-center justify-center w-fullnfobtn">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Camisa Social Elastano</span>
+                <span class="price">R$ 359</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Caroussel -->
+    <section>
+      <div
+        class="container-carousel w-screen flex items-center justify-center my-5">
+        <div class="carousel-content">
+          <div class="carousel-item">
+            <img src="./assets/images/carousel (1).png" alt="" />
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/carousel (2).png" alt="" />
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/carousel (3).png" alt="" />
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/carousel (4).png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- novos-f -->
+    <section>
+      <div
+        class="container-novos -screen flex flex-col items-center justify-evenly rounded">
+        <div class="title-wrapper">
+          <h2>Novos Femininos</h2>
+        </div>
+        <div class="novos-btns flex justify-around items-center">
+          <button class="btn-casacos" id="button">Casacos</button>
+          <button class="btn-jeans" id="button">Jeans</button>
+          <button class="btn-tricots" id="button">Tricots</button>
+        </div>
+        <div class="cards-container flex items-center justify-around p-2">
+          <div class="card casacos" data-id="10">
+            <img src="./assets/images/casaco1-nobg.png" alt="casacos" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-10"
+                id="Pequeno-10"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-10"
+                id="Medio-10" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-10"
+                id="Grande-10" />
+              <label for="Pequeno-10">P</label>
+              <label for="Medio-10">M</label>
+              <label for="Grande-10">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+              <div class="infotxt">
+                <span class="name">Casaco Sobretudo</span>
+                <span class="price">R$ 399</span>
+              </div>
+            </div>
+          </div>
+          <div class="card casacos" data-id="11">
+            <img src="./assets/images/casaco2-nobg.png" alt="casacos" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-11"
+                id="Pequeno-11"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-11"
+                id="Medio-11" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-11"
+                id="Grande-11" />
+              <label for="Pequeno-11">P</label>
+              <label for="Medio-11">M</label>
+              <label for="Grande-11">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+
+              <div class="infotxt">
+                <span class="name">Casaco Longo com Botões</span>
+                <span class="price">R$ 399</span>
+              </div>
+            </div>
+          </div>
+          <div class="card casacos" data-id="12">
+            <img src="./assets/images/casaco3-nobg.png" alt="casual" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-12"
+                id="Pequeno-12"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-12"
+                id="Medio-12" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-12"
+                id="Grande-12" />
+              <label for="Pequeno-12">P</label>
+              <label for="Medio-12">M</label>
+              <label for="Grande-12">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+
+              <div class="infotxt">
+                <span class="name">Casaco de Veludo Longo</span>
+                <span class="price">R$ 489</span>
+              </div>
+            </div>
+          </div>
+          <div class="card jeans" data-id="13">
+            <img src="./assets/images/jeans1-nobg.png" alt="jeans" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-13"
+                id="Pequeno-13"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-13"
+                id="Medio-13" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-13"
+                id="Grande-13" />
+              <label for="Pequeno-13">P</label>
+              <label for="Medio-13">M</label>
+              <label for="Grande-13">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+
+              <div class="infotxt">
+                <span class="name">Jeans Loose</span>
+                <span class="price">R$ 179</span>
+              </div>
+            </div>
+          </div>
+          <div class="card jeans" data-id="14">
+            <img src="./assets/images/jeans2-nobg.png" alt="jeans" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-14"
+                id="Pequeno-14"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-14"
+                id="Medio-14" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-14"
+                id="Grande-14" />
+              <label for="Pequeno-14">P</label>
+              <label for="Medio-14">M</label>
+              <label for="Grande-14">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+
+              <div class="infotxt">
+                <span class="name">Jeans Reta com Cinto</span>
+                <span class="price">R$ 239</span>
+              </div>
+            </div>
+          </div>
+          <div class="card jeans" data-id="15">
+            <img src="./assets/images/jeans3-nobg.png" alt="jeans" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-15"
+                id="Pequeno-15"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-15"
+                id="Medio-15" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-15"
+                id="Grande-15" />
+              <label for="Pequeno-15">P</label>
+              <label for="Medio-15">M</label>
+              <label for="Grande-15">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+
+              <div class="infotxt">
+                <span class="name">Jeans Cintura Alta</span>
+                <span class="price">R$ 199</span>
+              </div>
+            </div>
+          </div>
+          <div class="card tricots" data-id="16">
+            <img src="./assets/images/tricot1-nobg.png" alt="tricots" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-16"
+                id="Pequeno-16"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-16"
+                id="Medio-16" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-16"
+                id="Grande-16" />
+              <label for="Pequeno-16">P</label>
+              <label for="Medio-16">M</label>
+              <label for="Grande-16">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+
+              <div class="infotxt">
+                <span class="name">Tricots Gola alta</span>
+                <span class="price">R$ 299</span>
+              </div>
+            </div>
+          </div>
+          <div class="card tricots" data-id="17">
+            <img src="./assets/images/tricot2-nobg.png" alt="tricots" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-17"
+                id="Pequeno-17"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-17"
+                id="Medio-17" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-17"
+                id="Grande-17" />
+              <label for="Pequeno-17">P</label>
+              <label for="Medio-17">M</label>
+              <label for="Grande-17">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+
+              <div class="infotxt">
+                <span class="name">Tricots Longo com Botões</span>
+                <span class="price">R$ 899</span>
+              </div>
+            </div>
+          </div>
+          <div class="card tricots" data-id="18">
+            <img src="./assets/images/tricot3-nobg.png" alt="tricots" />
+            <div class="select-size">
+              <input
+                class="Pequeno"
+                type="radio"
+                name="s-size-18"
+                id="Pequeno-18"
+                checked />
+              <input
+                class="Medio"
+                type="radio"
+                name="s-size-18"
+                id="Medio-18" />
+              <input
+                class="Grande"
+                type="radio"
+                name="s-size-18"
+                id="Grande-18" />
+              <label for="Pequeno-18">P</label>
+              <label for="Medio-18">M</label>
+              <label for="Grande-18">G</label>
+            </div>
+            <div class="info flex flex-col items-center justify-evenly">
+              <div class="infobtn flex items-center justify-center w-full">
+                <button class="add-cart" id="button">
+                  +
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </button>
+              </div>
+
+              <div class="infotxt">
+                <span class="name">Tricots Tomara que Caia</span>
+                <span class="price">R$ 689</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Acessorios -->
+    <section>
+      <div
+        class="container-acessorios w-screen flex flex-col items-center justify-start my-5">
+        <div class="title-wrapper">
+          <h2>Acessórios</h2>
+        </div>
+        <button id="button">Compre agora</button>
+        <div class="acessorios-grid">
+          <div class="acessorioimg acessorio1" id="item1"></div>
+
+          <div class="acessorioimg acessorio2" id="item2"></div>
+
+          <div class="acessorioimg acessorio3" id="item3"></div>
+
+          <div class="acessorioimg acessorio4" id="item4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promocao -->
+    <section>
+      <div
+        class="container-promocao w-screen my-5 flex flex-col items-center justify-evenly">
+        <div class="title-wrapper">
+        <h2>Promocao Especial</h2>
+        </div>
+        <h3>
+          Compre uma peça nova para ganhar um cupon de 20$ na próxima compra
+        </h3>
+        <span>Promoção válida por 2 meses após compra da peça</span>
+        <span
+          >Membros também recebem nosso perfume Impacto no primeiro uso do
+          cupom</span
+        >
+        <button id="button">Compre Agora</button>
+        <button id="button">Torne-se um membro</button>
+      </div>
+    </section>
+    <!-- Categorias -->
+    <section class="categorias w-screen flex items-center justify-center my-5">
+      <div
+        class="container-categorias flex items-center justify-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+        <div
+          class="categoria-item flex flex-col text-center cursor-pointer h-full">
+          <img src="./assets/images/categorias (1).jpg" alt="" />
+          <div class="categoria-title-wrapper">
+            <h2>Feminino</h2>
+          </div>
+        </div>
+        <div
+          class="categoria-item flex flex-col text-center cursor-pointer h-full">
+          <img src="./assets/images/categorias (2).jpg" alt="" />
+          <div class="categoria-title-wrapper">
+            <h2>Masculino</h2>
+          </div>
+        </div>
+        <div
+          class="categoria-item flex flex-col text-center cursor-pointer h-full">
+          <img src="./assets/images/categorias (3).jpg" alt="" />
+          <div class="categoria-title-wrapper">
+            <h2>Infantil</h2>
+          </div>
+        </div>
+        <div
+          class="categoria-item flex flex-col text-center cursor-pointer h-full">
+          <img src="./assets/images/categorias (4).jpg" alt="" />
+          <div class="categoria-title-wrapper">
+            <h2>Undewear</h2>
+          </div>
+        </div>
+        <div
+          class="categoria-item flex flex-col text-center cursor-pointer h-full">
+          <img src="./assets/images/categorias (5).jpg" alt="" />
+          <div class="categoria-title-wrapper">
+            <h2>Plus Size</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container-footer flex items-center justify-around h-full gap-2">
+        <button id="button">Assine nossa revista</button>
+        <div>
+          <h1>Ajuda</h1>
+
+          <span>Fale Conosco</span>
+          <br />
+          <span>Encontre uma loja próxima</span>
+        </div>
+        <div>
+          <h1>Pedidos e Pagamentos</h1>
+
+          <span>Status do pedido</span>
+          <br />
+          <span>Política de retorno</span>
+          <br />
+          <span>Informações de envio</span>
+        </div>
+      </div>
+      <span>© Copyright - Victor's Secret. Todos os direitos reservados.</span>
+    </footer>
+  </body>
+</html>
